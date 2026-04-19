@@ -1,71 +1,83 @@
-# Monitoring Blueprint Submission
+# Day 13 Observability Lab Report
 
-## 1. Team
-- Group name:
-- Members:
-- Repo link:
+> **Instruction**: Fill in all sections below. This report is designed to be parsed by an automated grading assistant. Ensure all tags (e.g., `[GROUP_NAME]`) are preserved.
 
-## 2. Service overview
-- Agent name:
-- Primary use case:
-- Main user flow:
-- Risk profile:
+## 1. Team Metadata
+- [GROUP_NAME]: 
+- [REPO_URL]: 
+- [MEMBERS]:
+  - Member A: [Name] | Role: Logging & PII
+  - Member B: [Name] | Role: Tracing & Enrichment
+  - Member C: [Name] | Role: SLO & Alerts
+  - Member D: [Name] | Role: Load Test & Dashboard
+  - Member E: [Name] | Role: Demo & Report
 
-## 3. Architecture
-Paste diagram or describe:
-- client
-- api
-- rag/tool layer
-- llm layer
-- logs
-- traces
-- dashboard
-- alert path
+---
 
-## 4. SLO table
-| SLI | Target | Window | Why this matters | Current value |
-|---|---:|---|---|---:|
-| Latency P95 |  | 28d |  |  |
-| Error rate |  | 28d |  |  |
-| Daily cost |  | 1d |  |  |
-| Quality proxy |  | 7d |  |  |
+## 2. Group Performance (Auto-Verified)
+- [VALIDATE_LOGS_FINAL_SCORE]: /100
+- [TOTAL_TRACES_COUNT]: 
+- [PII_LEAKS_FOUND]: 
 
-## 5. Dashboard design
-List your 6 Layer-2 panels:
-1.
-2.
-3.
-4.
-5.
-6.
+---
 
-## 6. Alert rules
-| Alert | Severity | Trigger | Owner | Runbook |
-|---|---|---|---|---|
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
+## 3. Technical Evidence (Group)
 
-## 7. Incident debug summary
-- Scenario:
-- Symptoms observed:
-- Metrics evidence:
-- Trace evidence:
-- Logs evidence:
-- Root cause:
-- Fix applied:
-- Preventive action:
+### 3.1 Logging & Tracing
+- [EVIDENCE_CORRELATION_ID_SCREENSHOT]: [Path to image]
+- [EVIDENCE_PII_REDACTION_SCREENSHOT]: [Path to image]
+- [EVIDENCE_TRACE_WATERFALL_SCREENSHOT]: [Path to image]
+- [TRACE_WATERFALL_EXPLANATION]: (Briefly explain one interesting span in your trace)
 
-## 8. Cost and scaling plan
-- Cost per request estimate:
-- Top cost drivers:
-- One optimization for next week:
-- Scaling trigger:
+### 3.2 Dashboard & SLOs
+- [DASHBOARD_6_PANELS_SCREENSHOT]: [Path to image]
+- [SLO_TABLE]:
+| SLI | Target | Window | Current Value |
+|---|---:|---|---:|
+| Latency P95 | < 3000ms | 28d | |
+| Error Rate | < 2% | 28d | |
+| Cost Budget | < $2.5/day | 1d | |
 
-## 9. Evidence checklist
-- [ ] 10+ traces visible
-- [ ] JSON logs captured
-- [ ] correlation_id searchable
-- [ ] PII redacted
-- [ ] screenshot of dashboard with data
-- [ ] screenshots of 3 alert rules
+### 3.3 Alerts & Runbook
+- [ALERT_RULES_SCREENSHOT]: [Path to image]
+- [SAMPLE_RUNBOOK_LINK]: [docs/alerts.md#L...]
+
+---
+
+## 4. Incident Response (Group)
+- [SCENARIO_NAME]: (e.g., rag_slow)
+- [SYMPTOMS_OBSERVED]: 
+- [ROOT_CAUSE_PROVED_BY]: (List specific Trace ID or Log Line)
+- [FIX_ACTION]: 
+- [PREVENTIVE_MEASURE]: 
+
+---
+
+## 5. Individual Contributions & Evidence
+
+### [MEMBER_A_NAME]
+- [TASKS_COMPLETED]: 
+- [EVIDENCE_LINK]: (Link to specific commit or PR)
+
+### [MEMBER_B_NAME]
+- [TASKS_COMPLETED]: 
+- [EVIDENCE_LINK]: 
+
+### [MEMBER_C_NAME]
+- [TASKS_COMPLETED]: 
+- [EVIDENCE_LINK]: 
+
+### [MEMBER_D_NAME]
+- [TASKS_COMPLETED]: 
+- [EVIDENCE_LINK]: 
+
+### [MEMBER_E_NAME]
+- [TASKS_COMPLETED]: 
+- [EVIDENCE_LINK]: 
+
+---
+
+## 6. Bonus Items (Optional)
+- [BONUS_COST_OPTIMIZATION]: (Description + Evidence)
+- [BONUS_AUDIT_LOGS]: (Description + Evidence)
+- [BONUS_CUSTOM_METRIC]: (Description + Evidence)
