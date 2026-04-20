@@ -24,13 +24,13 @@
 ## 3. Technical Evidence (Group)
 
 ### 3.1 Logging & Tracing
-- [EVIDENCE_CORRELATION_ID_SCREENSHOT]: ScreenShot\CORRELATION_ID_SCREENSHOT.png
-- [EVIDENCE_PII_REDACTION_SCREENSHOT]: ScreenShot\PII_REDACTION_SCREENSHOT.png
-- [EVIDENCE_TRACE_WATERFALL_SCREENSHOT]: ScreenShot\TRACE_WATERFALL_SCREENSHOT.png
+- EVIDENCE_CORRELATION_ID_SCREENSHOT: ScreenShot\CORRELATION_ID_SCREENSHOT.png
+- EVIDENCE_PII_REDACTION_SCREENSHOT: ScreenShot\PII_REDACTION_SCREENSHOT.png
+- EVIDENCE_TRACE_WATERFALL_SCREENSHOT: ScreenShot\TRACE_WATERFALL_SCREENSHOT.png
 - [TRACE_WATERFALL_EXPLANATION]: (Briefly explain one interesting span in your trace)
 
 ### 3.2 Dashboard & SLOs
-- [DASHBOARD_6_PANELS_SCREENSHOT]: ScreenShot\Dashboard-Monitor.png
+- DASHBOARD_6_PANELS_SCREENSHOT: ScreenShot\Dashboard-Monitor.png
 - [SLO_TABLE]:
 | SLI | Target | Window | Current Value |
 |---|---:|---|---:|
@@ -39,7 +39,7 @@
 | Cost Budget | < $2.5/day | 1d | |
 
 ### 3.3 Alerts & Runbook
-- [ALERT_RULES_SCREENSHOT]: ScreenShort\ALERT_RULES_SCREENSHOT.png
+- ALERT_RULES_SCREENSHOT: ScreenShort\ALERT_RULES_SCREENSHOT.png
 - [SAMPLE_RUNBOOK_LINK]: [docs/alerts.md#L...]
 
 ---
