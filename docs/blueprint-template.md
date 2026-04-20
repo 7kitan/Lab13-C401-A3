@@ -6,12 +6,12 @@
 - [GROUP_NAME]: A3 - C401
 - [REPO_URL]: https://github.com/7kitan/Lab13-C401-A3
 - [MEMBERS]:
-  - Member A: [Điền Tên] | Chịu trách nhiệm: logging + PII
-  - Member B: [Điền Tên] | Chịu trách nhiệm: tracing + tags
-  - Member C: [Điền Tên] | Chịu trách nhiệm: SLO + alerts
+  - Member A: Nguyễn Xuân Hoàng | Chịu trách nhiệm: logging + PII
+  - Member B: Nguyễn Tuấn Kiệt | Chịu trách nhiệm: tracing + tags
+  - Member C: Nguyễn Văn Bách | Chịu trách nhiệm: SLO + alerts
   - Member D: Trần Trọng Giang | Chịu trách nhiệm: load test + incident injection
   - Member E: Nguyễn Đức Duy | Chịu trách nhiệm: dashboard + evidence
-  - Member F: [Điền Tên] | Chịu trách nhiệm: blueprint + demo lead
+  - Member F: Nguyễn Duy Hưng | Chịu trách nhiệm: blueprint + demo lead
 ---
 
 ## 2. Group Performance (Auto-Verified)
