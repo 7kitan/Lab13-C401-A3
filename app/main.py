@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import os
-
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 from structlog.contextvars import bind_contextvars

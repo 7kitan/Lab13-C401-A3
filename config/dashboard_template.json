@@ -1,0 +1,107 @@
+{
+  "dashboard": {
+    "title": "Day 13: Observability Dashboard",
+    "description": "6-panel observability dashboard for LLM agent monitoring",
+    "refresh_interval_seconds": 15,
+    "default_time_range": "1h",
+    "data_source": {
+      "metrics_endpoint": "http://127.0.0.1:8000/metrics",
+      "log_file": "data/logs.jsonl"
+    },
+    "slo_thresholds": {
+      "latency_p95_ms": 3000,
+      "error_rate_pct": 2.0,
+      "daily_cost_usd": 2.5,
+      "quality_score_avg": 0.75
+    },
+    "panels": [
+      {
+        "id": 1,
+        "title": "Latency P50/P95/P99",
+        "type": "bar_chart",
+        "description": "Latency distribution across percentiles with SLO threshold line",
+        "metrics": ["latency_p50", "latency_p95", "latency_p99"],
+        "unit": "ms",
+        "slo_line": {
+          "value": 3000,
+          "label": "SLO P95: 3000ms",
+          "color": "#e74c3c",
+          "style": "dashed"
+        },
+        "colors": ["#6c63ff", "#3b82f6", "#8b5cf6"]
+      },
+      {
+        "id": 2,
+        "title": "Traffic (Request Count)",
+        "type": "metric_card_and_bar",
+        "description": "Total request count and traffic over time grouped by minute",
+        "metrics": ["traffic"],
+        "unit": "requests",
+        "time_series_source": "logs.jsonl",
+        "group_by": "minute"
+      },
+      {
+        "id": 3,
+        "title": "Error Rate with Breakdown",
+        "type": "donut_chart",
+        "description": "Error rate percentage and error type breakdown",
+        "metrics": ["error_breakdown"],
+        "unit": "%",
+        "slo_line": {
+          "value": 2.0,
+          "label": "SLO: < 2%"
+        },
+        "colors": ["#e74c3c", "#f39c12", "#e67e22", "#c0392b"]
+      },
+      {
+        "id": 4,
+        "title": "Cost Over Time",
+        "type": "line_chart",
+        "description": "Cumulative cost in USD over time with daily budget SLO line",
+        "metrics": ["total_cost_usd", "avg_cost_usd"],
+        "unit": "USD",
+        "time_series_source": "logs.jsonl",
+        "cumulative": true,
+        "slo_line": {
+          "value": 2.5,
+          "label": "SLO: $2.50/day",
+          "color": "#e74c3c",
+          "style": "dashed"
+        }
+      },
+      {
+        "id": 5,
+        "title": "Tokens In/Out",
+        "type": "bar_chart",
+        "description": "Total input and output token consumption",
+        "metrics": ["tokens_in_total", "tokens_out_total"],
+        "unit": "tokens",
+        "colors": ["#3b82f6", "#f39c12"]
+      },
+      {
+        "id": 6,
+        "title": "Quality Proxy",
+        "type": "gauge",
+        "description": "Heuristic quality score average with SLO threshold",
+        "metrics": ["quality_avg"],
+        "unit": "score (0-1)",
+        "range": [0, 1],
+        "slo_line": {
+          "value": 0.75,
+          "label": "SLO: > 0.75",
+          "color": "#e74c3c"
+        }
+      }
+    ],
+    "kpi_cards": [
+      {"metric": "traffic", "label": "Total Traffic", "unit": "requests"},
+      {"metric": "error_rate", "label": "Error Rate", "unit": "%", "derived": "sum(error_breakdown) / traffic * 100"},
+      {"metric": "latency_p50", "label": "Avg Latency (P50)", "unit": "ms"}
+    ],
+    "layout": {
+      "max_panels": 6,
+      "columns": 2,
+      "kpi_row_columns": 3
+    }
+  }
+}
