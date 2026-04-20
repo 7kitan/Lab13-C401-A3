@@ -4,6 +4,13 @@ import os
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 from structlog.contextvars import bind_contextvars
+from dotenv import load_dotenv
+
+# Load environment variables first
+load_dotenv()
+
+# Force Langfuse Debug mode
+os.environ["LANGFUSE_DEBUG"] = "True"
 
 from .agent import LabAgent
 from .incidents import disable, enable, status
@@ -13,6 +20,9 @@ from .middleware import CorrelationIdMiddleware
 from .pii import hash_user_id, summarize_text
 from .schemas import ChatRequest, ChatResponse
 from .tracing import tracing_enabled
+
+log = get_logger()
+log.info("langfuse_config", host=os.getenv("LANGFUSE_HOST"), public_key=os.getenv("LANGFUSE_PUBLIC_KEY"))
 
 configure_logging()
 log = get_logger()
