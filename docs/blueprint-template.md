@@ -24,13 +24,13 @@
 ## 3. Technical Evidence (Group)
 
 ### 3.1 Logging & Tracing
-- [EVIDENCE_CORRELATION_ID_SCREENSHOT]: ScreenShort\CORRELATION_ID_SCREENSHOT.png
-- [EVIDENCE_PII_REDACTION_SCREENSHOT]: ScreenShort\PII_REDACTION_SCREENSHOT.png
-- [EVIDENCE_TRACE_WATERFALL_SCREENSHOT]: 
+- [EVIDENCE_CORRELATION_ID_SCREENSHOT]: ScreenShot\CORRELATION_ID_SCREENSHOT.png
+- [EVIDENCE_PII_REDACTION_SCREENSHOT]: ScreenShot\PII_REDACTION_SCREENSHOT.png
+- [EVIDENCE_TRACE_WATERFALL_SCREENSHOT]: ScreenShot\TRACE_WATERFALL_SCREENSHOT.png
 - [TRACE_WATERFALL_EXPLANATION]: (Briefly explain one interesting span in your trace)
 
 ### 3.2 Dashboard & SLOs
-- [DASHBOARD_6_PANELS_SCREENSHOT]: ScreenShort\Dashboard-Monitor.png
+- [DASHBOARD_6_PANELS_SCREENSHOT]: ScreenShot\Dashboard-Monitor.png
 - [SLO_TABLE]:
 | SLI | Target | Window | Current Value |
 |---|---:|---|---:|
@@ -55,27 +55,27 @@
 
 ## 5. Individual Contributions & Evidence
 
-### [MEMBER_A_NAME] - Thiết lập Logging & Bảo vệ PII
+### Nguyễn Xuân Hoàng - Thiết lập Logging & Bảo vệ PII
 - [TASKS_COMPLETED]: Xây dựng luồng logs bằng `structlog`, tích hợp `JsonlFileProcessor`. Triển khai thành công Regex lọc dữ liệu nhạy cảm (Passport, SDT Việt Nam) trong `pii.py`. Pass 100% PII test.
 - [EVIDENCE_LINK]: 
 
-### [MEMBER_B_NAME] - Tích hợp Langfuse Tracing
+### Nguyễn Tuấn Kiệt - Tích hợp Langfuse Tracing
 - [TASKS_COMPLETED]: Cấu hình decorator `@observe()` của Langfuse, quản lý phân cấp Span Hierarchy (Parent Trace `chat-response` chứa các Span con `generation` và `retrieval`). Thiết lập PII Masking trên tracing inputs/outputs qua thuật tuán `summarize_text()`.
 - [EVIDENCE_LINK]: 
 
-### [MEMBER_C_NAME] - Alerting & Tracking SLOs
+### Nguyễn Văn Bách - Alerting & Tracking SLOs
 - [TASKS_COMPLETED]: Đánh giá mức độ khả dụng của dịch vụ dựa trên Latency P95 và Error Rates, lên cấu hình `alert_rules.yaml`. Viết tài liệu Runbook `alerts.md` xử lý khi hệ thống vi phạm SLO.
 - [EVIDENCE_LINK]: 
 
-### [MEMBER_D_NAME] - Giả lập Load Test & Incident
+### Trần Trọng Giang - Giả lập Load Test & Incident
 - [TASKS_COMPLETED]: Điều phối kịch bản kiểm thử tĩnh `load_test.py`, bơm traffic tạo ra 40+ Unique requests với đầy đủ `correlation_id` chéo. Khởi động tính năng `STATE["rag_slow"]` để đánh giá năng lực quan sát log của team.
 - [EVIDENCE_LINK]: 
 
-### [MEMBER_E_NAME] - Data Visualization (Dashboard)
+### Nguyễn Đức Duy - Data Visualization (Dashboard)
 - [TASKS_COMPLETED]: Code giao diện Giám sát (Observability Dashboard) bằng công nghệ Streamlit. Vẽ biểu đồ hiển thị 6 metrics quan trọng: Token Usage, Lỗi API, Cost, và Distribution của Request Latency.
 - [EVIDENCE_LINK]: 
 
-### [MEMBER_F_NAME] - Blueprint & Tích hợp liên tục
+### Nguyễn Duy Hưng - Blueprint & Tích hợp liên tục
 - [TASKS_COMPLETED]: Tham gia khắc phục Root Cause vụ việc `rag_slow`, chạy `validate_logs.py` để verify điểm tuyệt đối 100/100, và trình diễn (demo) quá trình vận hành hệ thống.
 - [EVIDENCE_LINK]: 
 
