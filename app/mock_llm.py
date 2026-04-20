@@ -5,6 +5,8 @@ import time
 from dataclasses import dataclass
 
 from .incidents import STATE
+from .pii import summarize_text
+from .tracing import langfuse_context, observe
 
 
 @dataclass
@@ -24,6 +26,7 @@ class FakeLLM:
     def __init__(self, model: str = "claude-sonnet-4-5") -> None:
         self.model = model
 
+    @observe(as_type="generation", capture_input=False, capture_output=False)
     def generate(self, prompt: str) -> FakeResponse:
         time.sleep(0.15)
         input_tokens = max(20, len(prompt) // 4)
@@ -34,4 +37,13 @@ class FakeLLM:
             "Starter answer. Teams should improve this output logic and add better quality checks. "
             "Use retrieved context and keep responses concise."
         )
+        
+        langfuse_context.update_current_observation(
+            name=self.model,
+            input=summarize_text(prompt),
+            output=summarize_text(answer),
+            model=self.model,
+            usage_details={"input": input_tokens, "output": output_tokens},
+        )
+        
         return FakeResponse(text=answer, usage=FakeUsage(input_tokens, output_tokens), model=self.model)
